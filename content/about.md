@@ -22,7 +22,7 @@ weight: 1
 </div>
 <div class="body">
 
-![This is an image](../../images/bg-header-about.jpg)
+![This is an image](../images/bg-header-about.jpg)
 
 </div>
 <div class="footer">
