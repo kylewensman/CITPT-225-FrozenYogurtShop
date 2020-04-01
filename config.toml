@@ -1,4 +1,4 @@
-baseURL = "./"
+baseURL = ""
 languageCode = "en-us"
 title = "Ticky Tacky Dark"
 theme = "ticky_tacky_dark"
