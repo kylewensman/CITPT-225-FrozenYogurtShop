@@ -1,0 +1,32 @@
+<!-- <img id="headerimg" class="veryrounded" src="{{ "img/header_template.png" | relURL }}" alt=""> -->
+<div id="header">
+    <div>
+        <a href="{{ .Site.BaseURL }}" class="logo"><img src="{{ .Site.BaseURL }}images/logo.png" alt=""></a>
+        <ul id="navigation">
+            {{- $pages := slice .Site.Home -}}
+            {{- $pages = $pages | append .Site.RegularPages.ByWeight -}}
+            {{ range $pages }}
+                <li class="menu">
+                    {{- if eq . $ -}}
+                        <a href="{{ .Site.BaseURL }}">{{ .Title }}</a>
+                    {{- else -}}
+                        <a href="{{ with .Params.actualurl }}{{ . | relURL }}{{ else }}{{ .Permalink }}{{ end }}">{{ .Title }}</a>
+                    {{- end -}}
+                </li>
+            {{- end }}
+        </ul>
+
+
+    </div>
+</div>
+<script>
+    (function() {
+        const links = document.getElementsByTagName('a')
+        const currentUrl = location.href
+        for (const link of links) {
+            if (link.href === currentUrl) {
+                link.classList.add('selected')
+            }
+        }
+    }())
+</script>
